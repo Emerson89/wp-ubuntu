@@ -1,0 +1,29 @@
+- name: Applying installation and dependency 
+  hosts: localhost
+  become: yes 
+   
+  roles:
+     - server
+
+- name: Applying installation php
+  hosts: localhost
+  become: yes
+  
+  roles:
+     - php
+
+- name: Applying database configuration
+  hosts: localhost
+  become: yes
+
+  roles:
+     - mysql
+
+- name: Applying Wordpress installation and configuration
+  hosts: localhost
+  become: yes
+
+  roles:
+     - wordpress
+
+

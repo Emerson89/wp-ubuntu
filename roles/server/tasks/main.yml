@@ -1,0 +1,19 @@
+--- 
+- name: Update repository
+  apt: name=* state=latest
+  
+- name: Installing dependency wordpress
+  apt: name={{ item }} state=present
+  with_items:
+    - apache2
+    - mysql-server
+    - php7.2-mysql
+    - php7.2
+    - libapache2-mod-php7.2
+    - python-mysqldb
+    
+- name: Restart apache2 
+  service: name=apache2 state=restarted 
+  
+ 
+
