@@ -5,7 +5,7 @@
   roles:
      - server
 
-       #- name: Applying installation php
+- name: Applying installation php
   hosts: localhost
   become: yes
   
