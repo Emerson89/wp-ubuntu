@@ -5,14 +5,6 @@
 
 ## Used Ubuntu 18.04.2 LTS ##
 
-# Install ansible
-
-#yum install ansible -y
-
-# Clone the repository
-
-#git clone https://github.com/Emerson89/wp-ubuntu.git
-
 # Move the directories / playbooks and / roles to the / etc / ansible directory, the installation was done on localhost and edit the hosts inventory file.
 
 #mv wp-emerson / roles wp-emerson / playbooks / etc / ansible
