@@ -1,7 +1,7 @@
 --- 
-- name: Update repository
-  apt: name=* state=latest
-  
+- name: Update apt cache
+  apt: update_cache=yes cache_valid_time=3600
+
 - name: Installing dependency wordpress
   apt: name={{ item }} state=present
   with_items:
@@ -11,9 +11,7 @@
     - php7.2
     - libapache2-mod-php7.2
     - python-mysqldb
-    
-- name: Restart apache2 
-  service: name=apache2 state=restarted 
+
   
  
 
