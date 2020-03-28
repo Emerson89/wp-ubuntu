@@ -5,9 +5,7 @@
 
 ## Used Ubuntu 18.04.2 LTS ##
 
-# Move the directories / playbooks and / roles to the / etc / ansible directory, the installation was done on localhost and edit the hosts inventory file.
-
-#mv wp-emerson / roles wp-emerson / playbooks / etc / ansible
+# Edit inventory file, installation can be done on localhost.
 
 #vim hosts
 
@@ -15,10 +13,12 @@
 
 127.0.0.1
 
+# Access the wp-ubuntu directory and execute the commands
+
 # To test host communication
 
 #ansible localhost -m ping
 
-## Run the file # playbook.yml found in the directory / playbooks
+## Run the file # playbook.yml
 
-#ansible-playbook playbooks/playbook.yml
+#ansible-playbook playbook.yml
