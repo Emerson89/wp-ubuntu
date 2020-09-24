@@ -1,24 +1,32 @@
+# Installing wordpress with ansible
 
-# wp-ubuntu
+## Dependencies
+![Badge](https://img.shields.io/badge/Ubuntu-18.04-red)
+![Badge](https://img.shields.io/badge/ansible-2.9.10-blue)
+![Badge](https://img.shields.io/badge/python-2.7.17-red)
 
-# Installing wordpress with ansible 2.9.6
-
-## Used Ubuntu 18.04.2 LTS ##
-
-# Edit inventory file, installation can be done on localhost.
-
-#vim hosts
-
-[wordpress]
-
-127.0.0.1
-
-# Access the wp-ubuntu directory and execute the commands
+# Edit inventory file
 
 # To test host communication
+```
+ansible localhost -m ping
+```
 
-#ansible localhost -m ping
+## Playbook example
+```
+---
+- name: Install wordpress
+  hosts: all
+  become: yes
+  roles:
+  - server
+  - php
+  - mysql
+  - wordpress
+```
+```
+ansible-playbook -i hosts playbook.yml
+```
+## License
+![Badge](https://img.shields.io/badge/license-GPLv3-green)
 
-## Run the file # playbook.yml
-
-#ansible-playbook playbook.yml
